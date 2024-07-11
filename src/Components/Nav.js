@@ -1,4 +1,7 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { NavLink } from "react-router-dom";
+import { FaRegUserCircle, FaBorderAll,FaBookmark,FaFilm,FaTv,FaSpider} from "react-icons/fa";
+
 
 export default function Nav() {
     return (
@@ -6,19 +9,26 @@ export default function Nav() {
 
             <div className="nav-center">
                 <div className="nav-center-first">
-                    <NavLink to='/'>İKON</NavLink>
+                    <NavLink to='/'><FaSpider />
+</NavLink>
                 </div>
                 <div className="nav-center-second">
-                    <NavLink to='/'>Tümü</NavLink>
-                    <NavLink to='/movies'>Filimler</NavLink>
-                    <NavLink to='/tv-series'>Diziler</NavLink>
-                    <NavLink to='/save'>Kaydedilenler</NavLink>
+                    <NavLink to='/'>   <FaBorderAll />
+
+</NavLink>
+                    <NavLink to='/movies'><FaFilm />
+</NavLink>
+                    <NavLink to='/tv-series'><FaTv />
+</NavLink>
+                    <NavLink to='/save'><FaBookmark />
+ </NavLink>
                 </div>
             </div>
             <div>
-                <NavLink to='/profile'>Profil</NavLink>
+                <NavLink to='/profile'><FaRegUserCircle />
+</NavLink>
             </div>
         </nav>
 
     )
-}
+}            
