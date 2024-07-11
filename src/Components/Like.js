@@ -13,8 +13,7 @@ export default function Like() {
     return (
         <div>
             {likeItems.length === 0 ? (
-                <div>Ürün yok</div>
-            ) : (
+                <div>Favoirlenmiş ürün yoktur!</div>) : (
                 <ul className="recommed-general">
                     {likeItems.map((product, index) => (
                         <li key={index} className="recommed">
@@ -41,6 +40,5 @@ export default function Like() {
                 </ul>
             )}
         </div>
-
     );
 }

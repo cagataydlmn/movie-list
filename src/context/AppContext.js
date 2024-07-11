@@ -26,7 +26,7 @@ const Provider = ({ children }) => {
   };
 
   useEffect(() => {
-    if (likeItems.length > 0) {
+    if (likeItems.length >= 0) {
       localStorage.setItem('likeItems', JSON.stringify(likeItems))
     }
   }, [likeItems])

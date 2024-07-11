@@ -1,5 +1,4 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-
+import { FaBookmark } from "react-icons/fa";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { useSite } from "../context/AppContext";
@@ -22,7 +21,12 @@ export default function AnaSayfa() {
 
     const favori = (product) => {
         const isLiked = likeItems.find(item => item.id === product.id);
-        if (!isLiked) {
+        if (isLiked) {
+            const updatedLikeItems = likeItems.filter(item => item.id !== product.id);
+        setLikeItems(updatedLikeItems);
+        localStorage.setItem("likeItems", JSON.stringify(updatedLikeItems));
+        }
+        else{
             const updatedLikeItems = [...likeItems, product];
             setLikeItems(updatedLikeItems);
             localStorage.setItem("likeItems", JSON.stringify(updatedLikeItems));
@@ -57,6 +61,7 @@ export default function AnaSayfa() {
                                 </div>
                             </Link>
                         </li>
+                    
                     ))
                     : productsAll.map((product, index) => (
                         <li key={index} className="recommed">
@@ -78,7 +83,9 @@ export default function AnaSayfa() {
                                     </div>
                                 </div>
                             </Link>
-                            <button className="position" onClick={() => favori(product)}>Favoriye Ekle</button>
+                            <div className="btn-deneme">
+                            <button className={likeItems.find(item => item.id === product.id) ? "position-not" : "position"}  onClick={() => favori(product)}><FaBookmark /></button>
+                            </div>
                         </li>
                     ))}
             </ul>
