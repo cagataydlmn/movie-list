@@ -4,10 +4,12 @@ body {
   background-color: #10141E;
   color: white;
 }
-ul{
+
+ul {
   padding-inline-start: 0;
 
 }
+
 a {
   text-decoration: none;
   color: white;
@@ -56,8 +58,8 @@ a {
   margin-top: 10px;
   margin-left: 10px;
   border-radius: 10px;
-  
-font-size: 35px;
+
+  font-size: 35px;
 
   padding: 20px;
 
@@ -70,8 +72,9 @@ font-size: 35px;
     gap: 20px;
     display: flex;
     flex-direction: column;
-    &-first{
-      a{
+
+    &-first {
+      a {
         color: red;
 
       }
@@ -97,15 +100,16 @@ font-size: 35px;
     list-style: none;
     width: 20%;
     margin-bottom: 50px;
-    
+
     &-image {
-     
+
       img {
         width: 75%;
         border-radius: 10px;
       }
     }
-    .btn-deneme{
+
+    .btn-deneme {
       bottom: 90%;
       padding-right: 25%;
       position: relative;
@@ -114,22 +118,26 @@ font-size: 35px;
       justify-content: end;
       flex-direction: column;
       gap: 20px;
-      button:hover{
+
+      button:hover {
         cursor: pointer;
       }
     }
-    .position{
+
+    .position {
       background: none;
-        color: white;
-        font-size: 25px;
-        border: none;
+      color: white;
+      font-size: 25px;
+      border: none;
     }
-    .position-not{
+
+    .position-not {
       color: gray;
       font-size: 25px;
       border: none;
       background: none;
     }
+
     &-title {
 
       .product-descriptions {
@@ -166,4 +174,201 @@ font-size: 35px;
 
 .home-text {
   font-size: 32px;
+}
+
+.movie_list {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  margin: 20px;
+
+  &-general {
+    width: 20%;
+    margin-bottom: 50px;
+  }
+
+  img {
+    width: 75%;
+    border-radius: 10px;
+  }
+}
+
+.movies_filter-general {
+  list-style: none;
+}
+
+.movies_filter {
+  margin: 20px;
+  gap: 30px;
+&-title{
+  width: 100%;
+}
+  &-general {
+    width: 70%;
+    margin-bottom: 50px;
+.movies_filter-top{
+  display: flex;
+  gap: 50px;
+  font-size: 30px;
+}
+  }
+
+  img {
+    width: 100%;
+  }
+}
+
+.movie_top {
+  display: flex;
+  margin-left: 40%;
+
+  &-link {
+    button {
+      color: white;
+      font-size: 25px;
+      padding: 0;
+      margin: 0;
+      border: none;
+      background: none;
+      cursor: pointer;
+    }
+
+    button {
+      --primary-color: white;
+      --hovered-color: #c84747;
+      position: relative;
+      display: flex;
+      font-weight: 800;
+      font-size: 30px;
+      gap: 0.5rem;
+      align-items: center;
+    }
+
+    button p {
+      margin: 0;
+      position: relative;
+      font-size: 20px;
+      color: white;
+    }
+
+    button::after {
+      position: absolute;
+      content: "";
+      width: 0;
+      left: 0;
+      bottom: -7px;
+      background: red;
+      height: 2px;
+      transition: 0.3s ease-out;
+    }
+
+    button p::before {
+      position: absolute;
+      /*   box-sizing: border-box; */
+      content: "Subscribe";
+      width: 0%;
+      inset: 0;
+      color: var(--hovered-color);
+      overflow: hidden;
+      transition: 0.3s ease-out;
+    }
+
+    button:hover::after {
+      width: 100%;
+    }
+
+    button:hover p::before {
+      width: 100%;
+    }
+
+    button:hover svg {
+      transform: translateX(4px);
+      color: red;
+    }
+
+    button svg {
+      color: white;
+      transition: 0.2s;
+      position: relative;
+      width: 15px;
+      transition-delay: 0.2s;
+    }
+  }
+}
+
+.movies {
+  button {
+    color: white;
+    font-size: 25px;
+    padding: 0;
+    margin: 0;
+    border: none;
+    background: none;
+    cursor: pointer;
+  }
+
+  button {
+    --primary-color: white;
+    --hovered-color: #c84747;
+    position: relative;
+    display: flex;
+    font-weight: 800;
+    font-size: 30px;
+    gap: 0.5rem;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-left: 20px;
+  }
+
+  button p {
+    margin: 0;
+    position: relative;
+    font-size: 20px;
+    color: white;
+  }
+
+  button::after {
+    position: absolute;
+    content: "";
+    width: 0;
+    left: 0;
+    bottom: -7px;
+    background: red;
+    height: 2px;
+    transition: 0.3s ease-out;
+  }
+
+  button p::before {
+    position: absolute;
+    /*   box-sizing: border-box; */
+    content: "Subscribe";
+    width: 0%;
+    inset: 0;
+    color: var(--hovered-color);
+    overflow: hidden;
+    transition: 0.3s ease-out;
+  }
+
+  button:hover::after {
+    width: 100%;
+  }
+
+  button:hover p::before {
+    width: 100%;
+  }
+
+  button:hover svg {
+    transform: translateX(4px);
+    color: red;
+  }
+
+  button svg {
+    color: white;
+    transition: 0.2s;
+    position: relative;
+    width: 15px;
+    transition-delay: 0.2s;
+  }
+
+
 }

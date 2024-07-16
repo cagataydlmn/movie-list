@@ -1,6 +1,5 @@
 import { useParams } from "react-router-dom"
 import { useSite } from "../context/AppContext";
-import Nav from "./Nav";
 
 export default function MovieDetail() {
     const { id } = useParams()

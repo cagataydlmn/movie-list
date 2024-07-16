@@ -32,6 +32,12 @@ export default function AnaSayfa() {
             localStorage.setItem("likeItems", JSON.stringify(updatedLikeItems));
         }
     };
+    useEffect(() => {
+        const liked = JSON.parse(localStorage.getItem('likeItems'));
+        if (liked?.length > 0) {
+            setLikeItems(liked)
+        }
+    }, []);
 
     return (
         <>

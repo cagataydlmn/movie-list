@@ -7,7 +7,7 @@ export default function Movies() {
             <div>
                 <Nav />
             </div>
-            <div className="Detail-comp">
+            <div className="">
                 <MovieList />
             </div>
         </div>

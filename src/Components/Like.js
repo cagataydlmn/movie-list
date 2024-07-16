@@ -3,13 +3,14 @@ import { useSite } from "../context/AppContext";
 import { Link } from "react-router-dom";
 
 export default function Like() {
-    const { likeItems, setLikeItems } = useSite();
-
+    const { likeItems, setLikeItems } = useSite();   
+     
     useEffect(() => {
-        const storedItems = JSON.parse(localStorage.getItem("likeItems"));
-        setLikeItems(storedItems);
-    }, [setLikeItems]);
-
+        const liked = JSON.parse(localStorage.getItem('likeItems'));
+        if (liked?.length > 0) {
+            setLikeItems(liked)
+        }
+    }, []);
     return (
         <div>
             {likeItems.length === 0 ? (

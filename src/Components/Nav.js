@@ -1,7 +1,5 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { NavLink } from "react-router-dom";
 import { FaRegUserCircle, FaBorderAll, FaBookmark, FaFilm, FaTv, FaSpider } from "react-icons/fa";
-
 
 export default function Nav() {
     return (
@@ -22,15 +20,16 @@ export default function Nav() {
                     <NavLink to='/tv-series'>
                         <FaTv />
                     </NavLink>
-                    <NavLink to='/save'>
-                        <FaBookmark />
-                    </NavLink>
+
                 </div>
             </div>
             <div>
-                <NavLink to='/profile'>
-                    <FaRegUserCircle />
+                <NavLink to='/save'>
+                    <FaBookmark />
                 </NavLink>
+                {/* <NavLink to='/profile'>
+                    <FaRegUserCircle />
+                </NavLink> */}
             </div>
         </nav>
 

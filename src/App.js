@@ -9,6 +9,8 @@ import Save from './Pages/Save';
 import Profile from './Pages/Profile';
 import  AppProvider  from './context/AppContext';
 import Detail from './Pages/Detail';
+import MovieFilterPage from './Pages/MovieFilterPage';
+import TvSeriesFilterPage from './Pages/TvSeriesFilterPage';
 
 function App() {
   return (
@@ -24,6 +26,11 @@ function App() {
             <Route path='/save/movie/:id' element={<Detail/>}/>
             <Route path='/tv-series/movie/:id' element={<Detail/>}/>
             <Route path='/movies/movie/:id' element={<Detail/>}/>
+            <Route path='/movies/:language' element={<MovieFilterPage/>}/>
+            <Route path='/movies/filtre/movie/:id' element={<Detail/>}/>/
+            <Route path='tv-series/tv-series/:id' element={<Detail/>}/>
+            <Route path='/tv-series/:language' element={<TvSeriesFilterPage/>}/>
+
           </Routes>
       </Router>
 </AppProvider>
