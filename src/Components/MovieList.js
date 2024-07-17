@@ -5,19 +5,15 @@ export default function MovieList() {
     const { products } = useSite()
     return (
         <>
-        <div className="movie_top">
-
-            <Link className="movie_top-link" to={`/movies/filtre`}>
-                <button className="movie_top-btn">
-                    filtreleme
-
-                </button>
-            </Link>
+            <div className="movie_top">
+                <Link className="movie_top-link" to={`/movies/filtre`}>
+                    <button className="movie_top-btn">
+                        FİLTRELEME
+                    </button>
+                </Link>
             </div>
-
             <ul className="movie_list">
                 {products.map((product, index) => (
-
                     <li key={index} className="movie_list-general">
                         <Link to={`movie/${product.id}`}>
                             <div className="movie_list-image">

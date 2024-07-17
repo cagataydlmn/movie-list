@@ -7,8 +7,7 @@ export default function AutoComplate() {
 
     return (
         <div className="input">
-                  <FontAwesomeIcon icon={faMagnifyingGlass}  />
-
+            <FontAwesomeIcon icon={faMagnifyingGlass} />
             <input
                 type="text"
                 placeholder="Search for movies or TV series"

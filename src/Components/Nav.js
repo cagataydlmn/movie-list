@@ -1,10 +1,9 @@
 import { NavLink } from "react-router-dom";
-import { FaRegUserCircle, FaBorderAll, FaBookmark, FaFilm, FaTv, FaSpider } from "react-icons/fa";
+import { FaBorderAll, FaBookmark, FaFilm, FaTv, FaSpider } from "react-icons/fa";
 
 export default function Nav() {
     return (
         <nav className="nav">
-
             <div className="nav-center">
                 <div className="nav-center-first">
                     <NavLink to='/'><FaSpider />
@@ -20,7 +19,6 @@ export default function Nav() {
                     <NavLink to='/tv-series'>
                         <FaTv />
                     </NavLink>
-
                 </div>
             </div>
             <div>
@@ -32,6 +30,5 @@ export default function Nav() {
                 </NavLink> */}
             </div>
         </nav>
-
     )
 }            

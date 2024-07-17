@@ -16,8 +16,7 @@ import "swiper/css/scrollbar";
 export default () => {
   const { tvProducts, products } = useSite();
   const productsAll = tvProducts.concat(products);
-
-
+  
   return (
     <div>
       <div className="home-text">Bugün Popüler</div>

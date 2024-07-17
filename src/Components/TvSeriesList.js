@@ -4,18 +4,15 @@ import { useSite } from "../context/AppContext"
 export default function TvSeriesList() {
     const { tvProducts } = useSite()
     return (
-      
+
         <>
-        <div className="movie_top">
-
-            <Link className="movie_top-link" to={`/tv-series/filtre`}>
-                <button className="movie_top-btn">
-                    filtreleme
-
-                </button>
-            </Link>
+            <div className="movie_top">
+                <Link className="movie_top-link" to={`/tv-series/filtre`}>
+                    <button className="movie_top-btn">
+                        FİLTRELEME
+                    </button>
+                </Link>
             </div>
-
             <ul className="movie_list">
                 {tvProducts.map((product, index) => (
 
@@ -42,6 +39,5 @@ export default function TvSeriesList() {
                 ))}
             </ul>
         </>
-    
     )
 }

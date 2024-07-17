@@ -12,24 +12,29 @@ export default function MovieDetail() {
 
     return (
         <div className="product-detail">
-            <div className="recommed">
-                <div className="recommed-image">
+            <div className="detail">
+                <div className="detail-image">
                     <img src={`https://image.tmdb.org/t/p/w500${thisProduct.poster_path || thisProduct.id}`} alt={thisProduct.title || thisProduct.name} />
                 </div>
-                <div>
-                    {thisProduct.overview}
-                </div>
-                <div className="recommed-title">
-                    <div className="product-descriptions">
-                        <div className="product-language">
-                            {thisProduct.original_language}
+                <div className="detail-bottom">
+                    <div className="detail-title">
+                        <div className="detail-title-name">
+                            {thisProduct.title || thisProduct.original_name}0
                         </div>
-                        <div className="product-date">
-                            {thisProduct.first_air_date || thisProduct.release_date}
+                        <div className="detail-general">
+                            <div className="detail-descriptions">
+                                (
+                                <div className="recdetailommed-language">
+                                    {thisProduct.original_language}
+                                </div>
+                                <div className="detail-date">
+                                    {thisProduct.first_air_date || thisProduct.release_date}
+                                </div>)
+                            </div>
                         </div>
                     </div>
-                    <div className="product-title">
-                        {thisProduct.title || thisProduct.original_name}
+                    <div>
+                        {thisProduct.overview}
                     </div>
                 </div>
             </div>

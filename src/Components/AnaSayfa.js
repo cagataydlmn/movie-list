@@ -23,10 +23,10 @@ export default function AnaSayfa() {
         const isLiked = likeItems.find(item => item.id === product.id);
         if (isLiked) {
             const updatedLikeItems = likeItems.filter(item => item.id !== product.id);
-        setLikeItems(updatedLikeItems);
-        localStorage.setItem("likeItems", JSON.stringify(updatedLikeItems));
+            setLikeItems(updatedLikeItems);
+            localStorage.setItem("likeItems", JSON.stringify(updatedLikeItems));
         }
-        else{
+        else {
             const updatedLikeItems = [...likeItems, product];
             setLikeItems(updatedLikeItems);
             localStorage.setItem("likeItems", JSON.stringify(updatedLikeItems));
@@ -67,7 +67,6 @@ export default function AnaSayfa() {
                                 </div>
                             </Link>
                         </li>
-                    
                     ))
                     : productsAll.map((product, index) => (
                         <li key={index} className="recommed">
@@ -90,7 +89,7 @@ export default function AnaSayfa() {
                                 </div>
                             </Link>
                             <div className="btn-deneme">
-                            <button className={likeItems.find(item => item.id === product.id) ? "position-not" : "position"}  onClick={() => favori(product)}><FaBookmark /></button>
+                                <button className={likeItems.find(item => item.id === product.id) ? "position-not" : "position"} onClick={() => favori(product)}><FaBookmark /></button>
                             </div>
                         </li>
                     ))}

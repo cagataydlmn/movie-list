@@ -11,8 +11,8 @@ export default function MovieFilter() {
         fetch('https://api.themoviedb.org/3/discover/tv?api_key=365a153ca89400a4c6bd390fbbe93f59')
             .then(response => response.json())
             .then(data => {
-                if (data && data.results) {
-                    const filteredProductsByCat = data.results.filter(movieItem => movieItem.original_language === language);
+                if (data) {
+                    const filteredProductsByCat = data.filter(movieItem => movieItem.original_language === language);
                     setProducts(filteredProductsByCat);
                 }
             })
@@ -27,22 +27,24 @@ export default function MovieFilter() {
 
     return (
         <>
-            <h1 style={{color: "red"}}>Dillere göre filtrele</h1>
+            <h1 style={{ color: "red" }}>
+                Dillere göre filtrele
+            </h1>
             <div className="movies">
                 {movies.map((movie) => (
                     <button onClick={() => handleFilterLanguage(movie)}>
                         {movie}
                     </button>
                 ))}
-                <Link to="/movies"><button>Tüm Filimlere Dön</button></Link>
+                <Link to="/movies">
+                    <button>Tüm Filimlere Dön</button>
+                </Link>
             </div>
-
             <ul className="movies_filter">
                 {filteredProducts.map((movieItem, movieItemIndex) => (
                     <li key={movieItemIndex} className="movies_filter-general">
                         <Link to={`movie/${movieItem.id}`}>
                             <div className="movies_filter-top">
-
                                 <div className="movies_filter-image">
                                     <img src={`https://image.tmdb.org/t/p/w500${movieItem.poster_path}`} alt={movieItem.title || movieItem.name} />
                                 </div>
@@ -50,14 +52,12 @@ export default function MovieFilter() {
                                     <div className="movies_filter-title">
                                         {movieItem.title || movieItem.original_name}
                                     </div>
-                                    
                                 </div>
-                                </div>
+                            </div>
                         </Link>
-
                     </li>
                 ))}
-        </ul >
+            </ul>
         </>
     );
 }

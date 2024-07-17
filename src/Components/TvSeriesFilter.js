@@ -11,7 +11,7 @@ export default function TvSeriesFilter() {
         fetch('https://api.themoviedb.org/3/discover/tv?api_key=365a153ca89400a4c6bd390fbbe93f59')
             .then(response => response.json())
             .then(data => {
-                if (data && data.results) {
+                if (data) {
                     const filteredProductsByCat = data.results.filter(movieItem => movieItem.original_language === language);
                     setTvProducts(filteredProductsByCat);
                 }
@@ -34,10 +34,10 @@ export default function TvSeriesFilter() {
                         {movie}
                     </button>
                 ))}
-
-                <Link to="/tv-series"><button>Tüm Dizilere Dön</button></Link>
+                <Link to="/tv-series">
+                    <button>Tüm Dizilere Dön</button>
+                </Link>
             </div>
-
             <ul className="movies_filter">
                 {filteredProducts.map((movieItem, movieItemIndex) => (
                     <li key={movieItemIndex} className="movies_filter-general">
@@ -57,12 +57,11 @@ export default function TvSeriesFilter() {
                                         </div>
                                     </div>
                                 </div>
-                                </div>
+                            </div>
                         </Link>
-
                     </li>
                 ))}
-        </ul >
+            </ul >
         </>
     );
 }
